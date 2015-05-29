@@ -43,33 +43,33 @@ include $(BUILD_SHARED_LIBRARY)
 
 #######################################
 # host shared library
-include $(CLEAR_VARS)
-LOCAL_SHARED_LIBRARIES := $(log_shared_libraries)
-LOCAL_C_INCLUDES := $(log_c_includes)
+#include $(CLEAR_VARS)
+#LOCAL_SHARED_LIBRARIES := $(log_shared_libraries)
+#LOCAL_C_INCLUDES := $(log_c_includes)
 
-LOCAL_SHARED_LIBRARIES += libcrypto-host
-LOCAL_MODULE_TAGS := optional
-LOCAL_MODULE := libssl-host
-LOCAL_MULTILIB := both
-LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/android-config.mk $(LOCAL_PATH)/Ssl.mk
-include $(LOCAL_PATH)/Ssl-config-host.mk
-include $(LOCAL_PATH)/android-config.mk
-include $(BUILD_HOST_SHARED_LIBRARY)
+#LOCAL_SHARED_LIBRARIES += libcrypto-host
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_MODULE := libssl-host
+#LOCAL_MULTILIB := both
+#LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/android-config.mk $(LOCAL_PATH)/Ssl.mk
+#include $(LOCAL_PATH)/Ssl-config-host.mk
+#include $(LOCAL_PATH)/android-config.mk
+#include $(BUILD_HOST_SHARED_LIBRARY)
 
 #######################################
 # ssltest
-include $(CLEAR_VARS)
-LOCAL_SHARED_LIBRARIES := $(log_shared_libraries)
-LOCAL_C_INCLUDES := $(log_c_includes)
+#include $(CLEAR_VARS)
+#LOCAL_SHARED_LIBRARIES := $(log_shared_libraries)
+#LOCAL_C_INCLUDES := $(log_c_includes)
 
-LOCAL_SRC_FILES := ssl/ssltest.c
-LOCAL_SHARED_LIBRARIES := libssl libcrypto
-LOCAL_MODULE := ssltest
-LOCAL_MULTILIB := both
-LOCAL_MODULE_STEM_32 := ssltest
-LOCAL_MODULE_STEM_64 := ssltest64
-LOCAL_MODULE_TAGS := optional
-LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/android-config.mk $(LOCAL_PATH)/Ssl.mk
-include $(LOCAL_PATH)/Ssl-config-host.mk
-include $(LOCAL_PATH)/android-config.mk
-include $(BUILD_EXECUTABLE)
+#LOCAL_SRC_FILES := ssl/ssltest.c
+#LOCAL_SHARED_LIBRARIES := libssl libcrypto
+#LOCAL_MODULE := ssltest
+#LOCAL_MULTILIB := both
+#LOCAL_MODULE_STEM_32 := ssltest
+#LOCAL_MODULE_STEM_64 := ssltest64
+#LOCAL_MODULE_TAGS := optional
+#LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/android-config.mk $(LOCAL_PATH)/Ssl.mk
+#include $(LOCAL_PATH)/Ssl-config-host.mk
+#include $(LOCAL_PATH)/android-config.mk
+#include $(BUILD_EXECUTABLE)

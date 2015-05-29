@@ -534,13 +534,13 @@ common_src_files := \
   crypto/x509v3/v3err.c \
 
 common_c_includes := \
-  external/openssl/. \
-  external/openssl/crypto \
-  external/openssl/crypto/asn1 \
-  external/openssl/crypto/evp \
-  external/openssl/crypto/modes \
-  external/openssl/include \
-  external/openssl/include/openssl \
+  $(LOCAL_PATH) \
+  $(LOCAL_PATH)/crypto \
+  $(LOCAL_PATH)/crypto/asn1 \
+  $(LOCAL_PATH)/crypto/evp \
+  $(LOCAL_PATH)/crypto/modes \
+  $(LOCAL_PATH)/include \
+  $(LOCAL_PATH)/include/openssl \
 
 arm_clang_asflags := \
   -no-integrated-as \
@@ -742,9 +742,9 @@ endif
 LOCAL_CFLAGS += $(common_cflags)
 LOCAL_C_INCLUDES += $(common_c_includes)
 
-LOCAL_SRC_FILES_arm += $(filter-out $(arm_exclude_files),$(common_src_files) $(arm_src_files))
-LOCAL_CFLAGS_arm += $(arm_cflags)
-LOCAL_CLANG_ASFLAGS_arm += $(arm_clang_asflags)
+LOCAL_SRC_FILES += $(filter-out $(arm_exclude_files),$(common_src_files) $(arm_src_files))
+LOCAL_CFLAGS += $(arm_cflags)
+LOCAL_CLANG_ASFLAGS += $(arm_clang_asflags)
 
 LOCAL_SRC_FILES_arm64 += $(filter-out $(arm64_exclude_files),$(common_src_files) $(arm64_src_files))
 LOCAL_CFLAGS_arm64 += $(arm64_cflags)

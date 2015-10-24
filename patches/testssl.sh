@@ -27,8 +27,8 @@ trap "echo Exiting on unexpected error." ERR
 device=/sdcard/android.testssl
 
 digest='-sha1'
-reqcmd="adb shell /system/bin/openssl req"
-x509cmd="adb shell /system/bin/openssl x509 $digest"
+reqcmd="adb shell /data/bin/openssl req"
+x509cmd="adb shell /data/bin/openssl x509 $digest"
 
 CAkey="$device/keyCA.ss"
 CAcert="$device/certCA.ss"

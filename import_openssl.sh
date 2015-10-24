@@ -604,10 +604,10 @@ function import() {
   # Setup android.testssl directory
   mkdir android.testssl
   cat test/testssl | \
-    sed 's#../util/shlib_wrap.sh ./ssltest#adb shell /system/bin/ssltest#' | \
-    sed 's#../util/shlib_wrap.sh ../apps/openssl#adb shell /system/bin/openssl#' | \
-    sed 's#adb shell /system/bin/openssl no-dh#[ `adb shell /system/bin/openssl no-dh` = no-dh ]#' | \
-    sed 's#adb shell /system/bin/openssl no-rsa#[ `adb shell /system/bin/openssl no-rsa` = no-dh ]#' | \
+    sed 's#../util/shlib_wrap.sh ./ssltest#adb shell /data/bin/ssltest#' | \
+    sed 's#../util/shlib_wrap.sh ../apps/openssl#adb shell /data/bin/openssl#' | \
+    sed 's#adb shell /data/bin/openssl no-dh#[ `adb shell /data/bin/openssl no-dh` = no-dh ]#' | \
+    sed 's#adb shell /data/bin/openssl no-rsa#[ `adb shell /data/bin/openssl no-rsa` = no-dh ]#' | \
     sed 's#../apps/server2.pem#/sdcard/android.testssl/server2.pem#' | \
     cat > \
     android.testssl/testssl

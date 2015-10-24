@@ -741,13 +741,17 @@ endif
 LOCAL_CFLAGS += $(common_cflags)
 LOCAL_C_INCLUDES += $(common_c_includes)
 
+ifeq ($(TARGET_ARCH_ABI),armeabi-v7a)
 LOCAL_SRC_FILES += $(filter-out $(arm_exclude_files),$(common_src_files) $(arm_src_files))
 LOCAL_CFLAGS += $(arm_cflags)
 LOCAL_CLANG_ASFLAGS += $(arm_clang_asflags)
+endif
 
-LOCAL_SRC_FILES_arm64 += $(filter-out $(arm64_exclude_files),$(common_src_files) $(arm64_src_files))
-LOCAL_CFLAGS_arm64 += $(arm64_cflags)
-LOCAL_CLANG_ASFLAGS_arm64 += $(arm64_clang_asflags)
+ifeq ($(TARGET_ARCH_ABI),arm64-v8a)
+LOCAL_SRC_FILES += $(filter-out $(arm64_exclude_files),$(common_src_files) $(arm64_src_files))
+LOCAL_CFLAGS += $(arm64_cflags)
+LOCAL_CLANG_ASFLAGS += $(arm64_clang_asflags)
+endif
 
 LOCAL_SRC_FILES_x86 += $(filter-out $(x86_exclude_files),$(common_src_files) $(x86_src_files))
 LOCAL_CFLAGS_x86 += $(x86_cflags)

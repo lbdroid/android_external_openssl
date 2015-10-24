@@ -9,17 +9,17 @@
 
 # Directories for ENGINE shared libraries
 openssl_cflags_32 += \
-  -DOPENSSLDIR="\"/system/lib/ssl\"" \
-  -DENGINESDIR="\"/system/lib/ssl/engines\""
+  -DOPENSSLDIR="\"/data/lib/ssl\"" \
+  -DENGINESDIR="\"/data/lib/ssl/engines\""
 openssl_cflags_static_32 += \
-  -DOPENSSLDIR="\"/system/lib/ssl\"" \
-  -DENGINESDIR="\"/system/lib/ssl/engines\""
+  -DOPENSSLDIR="\"/data/lib/ssl\"" \
+  -DENGINESDIR="\"/data/lib/ssl/engines\""
 openssl_cflags_64 += \
-  -DOPENSSLDIR="\"/system/lib64/ssl\"" \
-  -DENGINESDIR="\"/system/lib64/ssl/engines\""
+  -DOPENSSLDIR="\"/data/lib64/ssl\"" \
+  -DENGINESDIR="\"/data/lib64/ssl/engines\""
 openssl_cflags_static_64 += \
-  -DOPENSSLDIR="\"/system/lib64/ssl\"" \
-  -DENGINESDIR="\"/system/lib64/ssl/engines\""
+  -DOPENSSLDIR="\"/data/lib64/ssl\"" \
+  -DENGINESDIR="\"/data/lib64/ssl/engines\""
 
 # Intentionally excluded http://b/7079965
 ifneq (,$(filter -DZLIB, $(openssl_cflags_32) $(openssl_cflags_64) \

@@ -14,7 +14,7 @@ LOCAL_STATIC_LIBRARIES := libssl_static libcrypto_static
 include $(LOCAL_PATH)/Apps-config-target.mk
 include $(LOCAL_PATH)/android-config.mk
 LOCAL_ADDITIONAL_DEPENDENCIES := $(LOCAL_PATH)/android-config.mk $(LOCAL_PATH)/Apps.mk
-include $(BUILD_EXECUTABLE)
+#include $(BUILD_EXECUTABLE)
 
 #include $(CLEAR_VARS)
 #LOCAL_MODULE := openssl
